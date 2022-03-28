@@ -1,7 +1,7 @@
 import java.util.Date;
 
 
-public class Tarefa  {
+public class Tarefa implements Comparable<Tarefa> {
     private String Nome, Descricao, Categoria,Status;
     private Date DataTermino;
     private int Prioridade;
@@ -80,7 +80,9 @@ public class Tarefa  {
                 '}';
     }
 
-    public int Prio(Tarefa o){
+
+    @Override
+    public int compareTo(Tarefa o) {
         if(Prioridade > o.Prioridade){
             return 1;
         }
@@ -91,6 +93,4 @@ public class Tarefa  {
             return 0;
         }
     }
-
-
 }

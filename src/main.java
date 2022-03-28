@@ -11,11 +11,10 @@ public class main {
         Scanner leia = new Scanner(System.in);
         List<Tarefa> NovaLista = new ArrayList<>();
         int NumeroMenu = 0;
-        Collections.sort(NovaLista);
 
         while(NumeroMenu!=6){
             try {
-                System.out.println("MENU\n"+"1.Criar nova lista.\n"+"2.Mostrar listra.\n"+"3.Acessar lista.\n"+"4.Remover lista.\n"+"5.Remover todas as listas.\n"+"Tamanho da lista atual:"+ NovaLista.size()+"\n6.Sair.");
+                System.out.println("MENU\n"+"1.Criar nova lista.\n"+"2.Mostrar lista.\n"+"3.Acessar lista.\n"+"4.Remover lista.\n"+"5.Remover todas as listas.\n"+"Tamanho da lista atual:"+ NovaLista.size()+"\n6.Sair.");
                 NumeroMenu= leia.nextInt();
                 switch (NumeroMenu) {
                     case 1:
@@ -106,27 +105,25 @@ public class main {
         System.out.println("Digite o numero da Lista que quer remover:");
         int r = leia.nextInt();
         NovaLista.remove(r - 1);
-        System.out.println("Tarefa removida");
+        System.out.println("Lista removida");
     }
     public static void LimparTudo(ArrayList<Tarefa> NovaLista){
         NovaLista.clear();
-        System.out.println("Todas as tarefas foram removidas.");
+        System.out.println("Todas as Listas foram removidas.");
     }
-    public  static int AcessarTarefas(ArrayList<Tarefa> NovaLista, Scanner leia){
+    public  static void AcessarTarefas(ArrayList<Tarefa> NovaLista, Scanner leia){
         System.out.println("Digite o número da Lista que deseja ver:");
         int a = leia.nextInt();
         int b = NovaLista.size();
-         if ( a == b) {
+         if ( a>=0 && a<=b) {
                 System.out.println(NovaLista.get(a-1));
             } else {
                 System.out.println("Número invalido.");
                 AcessarTarefas(NovaLista, leia);
             }
-
-        return a;
     }
     public static void Rebalaciamento(ArrayList<Tarefa> NovaLista) {
-        Collections.sort(ArrayList<Tarefa> NovaLista);
+        Collections.sort(NovaLista);
 
     }
 
